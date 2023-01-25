@@ -11,6 +11,8 @@ public class Sesion3 {
         ejercicio3();
     }
 
+
+
     static void ejercicio3() {
         String lenguaje=JOptionPane.showInputDialog(null,"¿Cuál es tu lenguaje de programación favorito?").toLowerCase();
         if(lenguaje.equals("java")){

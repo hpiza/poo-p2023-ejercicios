@@ -4,7 +4,7 @@ public class Sesion4 {
 
     public static void main(String[] args) {
         int aPasar = 1 + (int) (24 * Math.random());
-        System.out.println("A pasar: " + aPasar);  // 15, 5, 21,17
+        System.out.println("A pasar: " + aPasar);  // 15, 5, 21, 17
         // diasPorMes();
         // capturarClave();
         capturarPrecioProducto();
@@ -13,12 +13,14 @@ public class Sesion4 {
     static void capturarPrecioProducto() {
         double precio = 0;
         do {
-            String preciostr=JOptionPane.showInputDialog("Ingrese el precio del producto");
+            String preciostr = JOptionPane.showInputDialog("Ingrese el precio del producto");
             try{
                 precio=Double.parseDouble(preciostr);
-            } catch (Exception e){
+                if(precio <= 0) JOptionPane.showMessageDialog(null, "El precio debe ser positivo");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "El precio debe ser un número real");
             }
-        } while (precio<=0);
+        } while (precio <= 0);
     }
 
     static void capturarClave() {

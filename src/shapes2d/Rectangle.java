@@ -1,5 +1,7 @@
 package shapes2d;
 
+import com.iteso.model.RGBColor;
+
 public class Rectangle {
 
     private double base = 1;
@@ -53,8 +55,14 @@ public class Rectangle {
         return String.format("[base=%.1f, height=%.1f, area=%.1f, perimeter=%.1f]", this.base, this.height, this.area(), this.perimeter());
     }
 
-    public boolean equals1(Rectangle rect) {
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Rectangle)) return false;
+        Rectangle rect = (Rectangle) obj;
         return this.base == rect.getBase() && this.height == rect.getHeight();
+    }
+
+    public Rectangle clone() {
+        return new Rectangle(this.base, this.height);
     }
 
 }

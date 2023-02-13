@@ -7,11 +7,11 @@ public class Sesion6 {
                              "Yahir", "Rodrigo", "Yochabel", "Arlyn", "Fernando", "Abdiel", "Francisco", "Samantha",
                               "Saúl", "Alberto", "Yael", "Samuel", "Miguel", "Benjamín", "Sergio"};
 
-//        int aPasar = (int) (alumnos.length * Math.random());
-//        System.out.println(aPasar);
-//        System.out.println("A pasar: " + alumnos[aPasar]);      // 15, 5, 21, 17, 12, 19, 2
+        int aPasar = (int) (alumnos.length * Math.random());
+        System.out.println(aPasar);
+        System.out.println("A pasar: " + alumnos[aPasar]);      // 15, 5, 21, 17, 12, 19, 2, 16, 7, 23, 10, 6
         // sumaMatrices();
-        matricesRaras();
+//        matricesRaras();
     }
 
     static void matricesRaras() {

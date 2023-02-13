@@ -49,8 +49,20 @@ public class TestRectangle {
         System.out.println("r5: " + r5);
 
         System.out.println("¿r4 == r5? " + (r4 == r5));
-        System.out.println("¿r4.equals(r5)? " + (r4.equals1(r5)));
+        System.out.println("¿r4.equals(r5)? " + (r4.equals(r5)));
+        System.out.println("¿r3.equals(r5)? " + (r3.equals(r5)));
+        String s = "hola!";
+        System.out.println("¿r3.equals(s)? " + (r4.equals(s)));
 
+        Rectangle r6 = r1.clone();
+        //r6.setBase(15);
+        System.out.println(r1);
+        System.out.println(r6);
+        System.out.println(r1 == r6);
+        System.out.println(r1.equals(r6));
+        System.out.println(r6.equals(r1));
+        System.out.println(r1.equals(r1));
+        System.out.println(r1.equals(null));
     }
 
 }

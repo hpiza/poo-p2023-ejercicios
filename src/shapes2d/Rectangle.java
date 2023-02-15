@@ -4,8 +4,15 @@ import com.iteso.model.RGBColor;
 
 public class Rectangle {
 
-    private double base = 1;
-    private double height = 1;
+    public static final double MIN_BASE = 3;
+    public static final double MAX_BASE = 20;
+    public static final double MIN_HEIGHT = 4;
+    public static final double MAX_HEIGHT = 50;
+
+    public static double sharedNumber = 5.6;
+
+    private double base = MIN_BASE;
+    private double height = MIN_HEIGHT;
 
     public Rectangle() {
         // this(3, 4);
@@ -25,7 +32,7 @@ public class Rectangle {
     }
 
     public void setBase(double base) {
-        if(base <= 0) return;
+        if(base < MIN_BASE || base > MAX_BASE) return;
         this.base = base;
     }
 
@@ -34,7 +41,7 @@ public class Rectangle {
     }
 
     public void setHeight(double height) {
-        if(height <= 0) return;
+        if(height < MIN_HEIGHT || height > MAX_HEIGHT) return;
         this.height = height;
     }
 
@@ -63,6 +70,27 @@ public class Rectangle {
 
     public Rectangle clone() {
         return new Rectangle(this.base, this.height);
+    }
+
+    public static double aspectRatio(double base, double height) {
+        if(base >= MIN_BASE && height >= MIN_HEIGHT) return base / height;
+        return -1;
+    }
+
+    public static double aspectRatio(Rectangle r) {
+        return aspectRatio(r.base, r.height);
+    }
+
+    public double aspectRatio() {
+        return aspectRatio(this.base, this.height);
+    }
+
+    public static boolean haveSameAspectRatio(Rectangle r1, Rectangle r2) {
+        return aspectRatio(r1) == aspectRatio(r2);
+    }
+
+    public boolean haveSameAspectRatio(Rectangle r) {
+        return haveSameAspectRatio(this, r);
     }
 
 }

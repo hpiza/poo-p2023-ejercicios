@@ -25,6 +25,12 @@ public class TestRGBColor {
 
         RGBColor c6 =  c4.clone();
         System.out.println(c6.equals(c4));
+        // c5.name = "Azul";
+        System.out.println(c5.name);
+        System.out.println(c6.name);
+
+        System.out.println(RGBColor.getRGB(255, 0, 127));
+        System.out.println(RGBColor.toGrayScale(c4));
 
     }
 }

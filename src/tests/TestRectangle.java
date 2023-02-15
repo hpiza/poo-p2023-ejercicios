@@ -63,6 +63,38 @@ public class TestRectangle {
         System.out.println(r6.equals(r1));
         System.out.println(r1.equals(r1));
         System.out.println(r1.equals(null));
+
+        System.out.println(r1.MIN_BASE);
+        System.out.println(r3.MIN_BASE);
+        System.out.println(r6.MIN_BASE);
+        System.out.println(Rectangle.MIN_BASE);
+        System.out.println(Rectangle.MAX_BASE);
+
+        System.out.println(r1.sharedNumber);
+        //System.out.println(Rectangle.sharedNumber);
+
+        r2.sharedNumber = 6.7;
+        System.out.println(r1.sharedNumber);
+        //System.out.println(Rectangle.sharedNumber);
+
+        r3.sharedNumber = 7.5;
+        System.out.println(r1.sharedNumber);
+        //System.out.println(Rectangle.sharedNumber);
+
+        System.out.println(r1.aspectRatio(800, 600));
+        System.out.println(Rectangle.aspectRatio(800, 600));
+
+        boolean b1 = Rectangle.haveSameAspectRatio(r1, r2);
+        //r1.base = 5;
+        boolean b2 = r1.haveSameAspectRatio(r2);
+        System.out.println(b1 + ", " + b2);
+
+        System.out.println(Rectangle.aspectRatio(r3));
+        System.out.println(r3.aspectRatio());
+
+        System.out.println(Math.sin(1.3));
+        //Math m = new Math();
+        //System.out.println(m.sin(1.3));
     }
 
 }

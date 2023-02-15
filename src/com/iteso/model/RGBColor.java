@@ -4,21 +4,21 @@ import shapes2d.Rectangle;
 
 public class RGBColor {
     private int red = 0, green = 0, blue = 0;
-    private String name = "undefined";
+    public final String name; // = "undefined";
 
     public RGBColor() {
-        this(127, 127, 127);
+        this(127, 127, 127, "Gris");
     }
 
     public RGBColor(int red, int green, int blue) {
-        this.setBlue(blue);
-        this.setGreen(green);
-        this.setRed(red);
+        this(red, green, blue, "undefined");
     }
 
     public RGBColor(int red, int green, int blue, String name) {
-        this(red, green, blue);
-        this.setName(name);
+        this.setBlue(blue);
+        this.setGreen(green);
+        this.setRed(red);
+        this.name = name;
     }
 
     //Setters:
@@ -37,10 +37,11 @@ public class RGBColor {
             this.red = red;
     }
 
+    /*
     public void setName(String name) {
         if (name != null)
             this.name = name;
-    }
+    }*/
 
     //Getters:
     public int getBlue() {
@@ -68,9 +69,17 @@ public class RGBColor {
     }
 
     public int getRGB() {
-        int g = this.green << 8;
-        int r = this.red << 16;
-        return this.blue | g | r;
+        return getRGB(this.red, this.green, this.blue);
+    }
+
+    public static int getRGB(int red, int green, int blue) {
+        //int g = green << 8;
+        //int r = red << 16;
+        return blue | (green << 8) | (red << 16);
+    }
+
+    public static double toGrayScale(RGBColor c) {
+        return 0.299 * c.red + 0.587 * c.green + 0.114 * c.blue;
     }
 
     @Override

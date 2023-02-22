@@ -2,14 +2,21 @@ package shapes2d;
 
 import com.iteso.model.RGBColor;
 
+import javax.swing.*;
+
 public class Rectangle {
 
-    public static final double MIN_BASE = 3;
+    public static final double MIN_BASE;
     public static final double MAX_BASE = 20;
-    public static final double MIN_HEIGHT = 4;
+    public static final double MIN_HEIGHT;
     public static final double MAX_HEIGHT = 50;
 
     public static double sharedNumber = 5.6;
+
+    static {
+        MIN_BASE = Integer.parseInt(JOptionPane.showInputDialog("Base mínima"));
+        MIN_HEIGHT = Integer.parseInt(JOptionPane.showInputDialog("Altura mínima"));
+    }
 
     private double base = MIN_BASE;
     private double height = MIN_HEIGHT;

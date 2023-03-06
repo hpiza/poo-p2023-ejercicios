@@ -1,5 +1,7 @@
 package com.iteso.calendar;
 
+import java.time.LocalDate;
+
 public class Date {
     public static final int MIN_YEAR = 1900, MAX_YEAR = 3000;
 
@@ -10,6 +12,7 @@ public class Date {
     private int    format = 0;
 
     public Date() {
+        toSystemDate();
     }
 
     public Date(int day, int month, int year) {
@@ -21,6 +24,13 @@ public class Date {
     public Date(int day, int month, int year, int format) {
         this(day, month, year);
         setFormat(format);
+    }
+
+    public void toSystemDate() {
+        LocalDate today = LocalDate.now();
+        setYear(today.getYear());
+        setMonth(today.getMonthValue());
+        setDay(today.getDayOfMonth());
     }
 
     public int getDay() {
@@ -116,6 +126,13 @@ public class Date {
     }
 
     public static void main(String[] args) {
+        Date today = new Date();
+        System.out.println(today);
+        today.setFormat(1);
+        System.out.println(today);
+        today.setFormat(2);
+        System.out.println(today);
+        /*
         Date d = new Date(15, 6, 3002);
         for(int i = 0; i < 100; i ++) {
             for(int f = 0; f <= 2; f ++) {
@@ -125,7 +142,7 @@ public class Date {
             System.out.println();
             d.next();
         }
-        System.out.println(d);
+        System.out.println(d);*/
     }
 
 

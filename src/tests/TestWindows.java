@@ -17,11 +17,16 @@ public class TestWindows {
         bw2.display();
         bw2.resize(-50, 40);
         bw2.display();
+        // bw2.x = -50;
 
         ExtendedWindow ew1 = new ExtendedWindow("An extended window");
         //System.out.println(ew1.title);
-        ew1.resize(10, 20);
-        ew1.display();
+        ew1.resize(10, 20);        // Método heredado
+        ew1.move(50, 60);           // Método añadido
+        ew1.display();                    // Método modificado
+
+        System.out.println(BasicWindow.MIN_WIDTH + ", " + BasicWindow.MIN_HEIGHT);
+        System.out.println(ExtendedWindow.MIN_WIDTH + ", " + ExtendedWindow.MIN_HEIGHT);
 
     }
 }

@@ -3,7 +3,10 @@ package com.iteso.model;
 import shapes2d.Rectangle;
 
 public class RGBColor {
-    private int red = 0, green = 0, blue = 0;
+
+    // visibilidad default (package)
+    // los atributos son públicos dentro de clases del mismo paquete; privados en las demás clases
+    int red = 0, green = 0, blue = 0;
     public final String name; // = "undefined";
 
     public RGBColor() {

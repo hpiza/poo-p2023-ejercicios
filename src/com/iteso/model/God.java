@@ -30,6 +30,8 @@ public class God {
 
     public void createWorld(String worldName) {
         System.out.printf("World %s created", worldName);
+        RGBColor c1 = new RGBColor();
+        c1.blue = -50;
     }
 
     public void destroyWorld(String worldName) {

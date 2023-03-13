@@ -2,9 +2,13 @@ package shapes3d;
 
 public abstract class Shape3D {
 
-    protected double x, y, z;
+    protected double x = 0, y = 0, z = 0;
 
-    public void move(double dx, double dy, double dz) {
+    public Shape3D(double x, double y, double z) {
+        move(x, y, z);
+    }
+
+    public final void move(double dx, double dy, double dz) {
         this.x += dx;
         this.y += dy;
         this.z += dz;

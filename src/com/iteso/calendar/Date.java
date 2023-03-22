@@ -11,6 +11,8 @@ public class Date {
     private int    day = 1, month = 1, year = 2017;
     private int    format = 0;
 
+    public int aField = 1000;
+
     public Date() {
         toSystemDate();
     }
@@ -115,7 +117,13 @@ public class Date {
     }
 
     public boolean isLeap() {
+        aMethod();
         return isLeap(this.year);
+    }
+
+    // Un método privado no se sobreescribe
+    protected void aMethod() {
+        System.out.println("aMethod in class Date");
     }
 
     public static boolean isValidDate(int dd, int mm, int yy) {

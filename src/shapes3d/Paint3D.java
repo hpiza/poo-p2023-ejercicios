@@ -22,7 +22,7 @@ public class Paint3D {
     public void displayAll() {
         for(int i = 0; i < index; i ++) {
             Shape3D shape = this.shapes[i];
-            System.out.println(shape.toString().substring(0, 4));  // toString() de cada subclase
+            System.out.println(shape.toString());  // toString() de cada subclase
         }
     }
 

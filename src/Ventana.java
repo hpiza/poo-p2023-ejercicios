@@ -49,8 +49,8 @@ public class Ventana extends JFrame {
         cancelBtn.setCursor(HAND_CURSOR);
         cancelBtn.setActionCommand("Cancel");
 
-        // OkListener okListener = new OkListener();
-        ActionListener buttonListener = new ActionListener() {
+        OkListener okListener = new OkListener();
+        ActionListener buttonListener1 = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String cmd = e.getActionCommand();
                 if(cmd.equals("Ok")) System.out.println("Se presionó el botón Ok");
@@ -58,9 +58,18 @@ public class Ventana extends JFrame {
             }
         };
 
+        ActionListener buttonListener2 = e -> System.out.println("Se presionó el botón Ok");
+        okBtn.addActionListener(buttonListener2);
+        cancelBtn.addActionListener(e -> System.out.println("Se presionó el botón Cancel"));
+
+        // CanvasUser canvasUser1 = () -> true;  // public boolean login() { return true; }
+
+        /*
+        int variableDeMétodo = 10;
         okBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Se presionó el botón Ok");
+                System.out.println(variableDeMétodo);
             }
         });
         cancelBtn.addActionListener(new ActionListener() {
@@ -68,7 +77,7 @@ public class Ventana extends JFrame {
                 System.out.println("Se presionó el botón Cancel");
             }
         });
-
+*/
         c.add(okBtn);
         c.add(cancelBtn);
     }
@@ -150,6 +159,7 @@ public class Ventana extends JFrame {
                 return "[" + super.toString() + "]";
             }
         };
+
         d1.setFormat(1);
         System.out.println(d1);
         d1.setDay(15);

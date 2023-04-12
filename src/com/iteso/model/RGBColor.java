@@ -13,11 +13,11 @@ public class RGBColor {
         this(127, 127, 127, "Gris");
     }
 
-    public RGBColor(int red, int green, int blue) {
+    public RGBColor(int red, int green, int blue) throws IllegalArgumentException {
         this(red, green, blue, "undefined");
     }
 
-    public RGBColor(int red, int green, int blue, String name) {
+    public RGBColor(int red, int green, int blue, String name) throws IllegalArgumentException {
         this.setBlue(blue);
         this.setGreen(green);
         this.setRed(red);
@@ -25,9 +25,10 @@ public class RGBColor {
     }
 
     //Setters:
-    public void setBlue(int blue) {
-        if (blue >= 0 && blue <= 255)
-            this.blue = blue;
+    public void setBlue(int blue) throws IllegalArgumentException {
+        if(blue < 0 || blue > 255) throw new IllegalArgumentException("Componente azul fuera de rango: " + blue);
+        //if (blue >= 0 && blue <= 255)
+        this.blue = blue;
     }
 
     public void setGreen(int green) {

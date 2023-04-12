@@ -1,6 +1,6 @@
 package tests;
 
-import edu.iteso.logic.*;
+//import edu.iteso.logic.*;
 
 public class TestLogics {
 
@@ -10,7 +10,7 @@ public class TestLogics {
             //Variable va = Variable.of("a");
             //va.setValue(true);
         //}
-
+/*
         Variable va = new Variable("a", true);
         Variable vb = new Variable("b", false);
         And and1 = new And(va, vb);
@@ -32,9 +32,9 @@ public class TestLogics {
         /*
         Constant c1 = new Constant(true);
         Constant c2 = new Constant(true);
-        Constant c3 = new Constant(true);*/
+        Constant c3 = new Constant(true);
         Constant c1 = Constant.False;
-        Constant c2 = Constant.True;
+        Constant c2 = Constant.True;*/
 
 
     }

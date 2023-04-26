@@ -2,7 +2,7 @@ package com.iteso.calendar;
 
 import java.time.LocalDate;
 
-public class Date {
+public class Date implements Comparable<Date> {
     public static final int MIN_YEAR = 1900, MAX_YEAR = 3000;
 
     public static final String[] MONTHS = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
@@ -110,6 +110,14 @@ public class Date {
         this.day = dd;
         this.month = mm;
         this.year = yy;
+    }
+
+    public int compareTo(Date d) {
+        if(this.year <  d.year ||
+           this.year == d.year && this.month <  d.month ||
+           this.year == d.year && this.month == d.month && this.day <  d.day) return -1;
+        if(this.year == d.year && this.month == d.month && this.day == d.day) return  0;
+        return 1;
     }
 
     public static boolean isLeap(int year) {

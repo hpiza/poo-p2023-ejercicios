@@ -161,5 +161,9 @@ public class Date implements Comparable<Date> {
         System.out.println(d);*/
     }
 
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
 }

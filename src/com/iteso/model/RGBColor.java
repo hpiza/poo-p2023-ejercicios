@@ -2,7 +2,13 @@ package com.iteso.model;
 
 import shapes2d.Rectangle;
 
-public class RGBColor {
+public class RGBColor implements Comparable<RGBColor> {
+
+    public int compareTo(RGBColor other) {
+        int rgb1 = getRGB();
+        int rgb2 = other.getRGB();
+        return rgb1 - rgb2;
+    }
 
     // visibilidad default (package)
     // los atributos son públicos dentro de clases del mismo paquete; privados en las demás clases
